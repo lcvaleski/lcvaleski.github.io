@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Logan Valeski's personal site.">
     <title>Logan Valeski</title>
     <style>
         body {
@@ -13,25 +12,48 @@
             height: 100vh;
             text-align: center;
             margin: 0;
+            font-family: Arial, sans-serif;
         }
-        div {
-            line-height: 1.6; /* Adjust this value for desired line spacing */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .city {
+            background-color: rgb(217, 217, 217);
+            border: 3.5px solid rgb(142, 142, 142);
+            margin: 20px;
+            padding: 20px;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+            overflow: auto;
+            border-radius: 6px;
         }
         p, a {
-            margin: 10px 0;
+            margin: 5px 0;
         }
+    
     </style>
 </head>
 <body>
-    <div>
-        <img src="thumbnail.png" alt="Dead & Co" width="127" height="115">
-        <p>Welcome to my site. It is currently under construction.</p>
-        <p>Check out my app, Meandering Sleep:</p>
-        <a href="https://apps.apple.com/us/app/meandering-sleep/id6502964632">App Store</a>
-        <br>
-        <a href="https://play.google.com/store/apps/details?id=net.coventry.sleepless&hl=en">Play Store</a>
-        <br>
-        <a href="https://github.com/lcvaleski">Github</a>
+    
+    <div class="container">
+        <div class="city">
+            <p><strong>Logan Valeski</strong></p>
+            <a href="/resume.html">Resume</a>
+            <a href="https://github.com/lcvaleski">Github</a>
+        </div>
+        <div class="city">
+            <p><strong>Current project</strong></p>
+            <a href="/meandering_description.html">Description</a>
+            <a href="https://play.google.com/store/apps/details?id=net.coventry.sleepless&hl=en">Play Store</a>
+            <a href="https://apps.apple.com/us/app/meandering-sleep/id6502964632">App Store</a>
+            <a href="https://github.com/lcvaleski/meandering-cloudflare">Backend code</a>
+        </div>
     </div>
 </body>
 </html>
