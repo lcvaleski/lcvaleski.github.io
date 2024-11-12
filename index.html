@@ -1,192 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logan Valeski - Resume</title>
+    <title>Logan Valeski</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #333;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        .contact-info {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
-            margin-top: 25px;
-        }
-        
-        .experience-item {
-            margin-bottom: 20px;
-        }
-        
-        .job-title {
             display: flex;
-            justify-content: space-between;
-            font-weight: bold;
-            margin-bottom: 5px;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            margin: 0;
+            font-family: Georgia, serif;
         }
-        
-        ul {
-            margin-top: 5px;
-            padding-left: 20px;
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
-        
-        li {
-            margin-bottom: 5px;
+        .city {
+            background-color: rgb(243, 243, 243);
+            border: 3.5px solid rgb(233, 233, 233);
+            margin: 20px;
+            padding: 20px;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+            overflow: auto;
+            border-radius: 6px;
         }
-        
-        a {
-            color: #0066cc;
-            text-decoration: none;
+        .cityWIP {
+            background-color: rgb(243, 243, 243);
+            border: 0.1px solid transparent;
+            margin: 20px;
+            padding: 5px;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+            overflow: auto;
+            border-radius: 6px;
+            background-image: linear-gradient(rgb(243, 243, 243), rgb(243, 243, 243)), 
+                            linear-gradient(45deg, 
+                                            black 25%, yellow 25%, 
+                                            yellow 50%, black 50%, 
+                                            black 75%, yellow 75%, yellow 100%);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            background-size: auto, 20px 20px;
         }
-        
-        a:hover {
-            text-decoration: underline;
+        p, a {
+            margin: 5px 0;
         }
+    
     </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WQS4TZXCNS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WQS4TZXCNS');
+</script>
 <body>
-    <header>
-        <h1>Logan Valeski</h1>
-        <div class="contact-info">
-            <a href="tel:720-256-1768">720-256-1768</a> |
-            <a href="mailto:loganvaleski@gmail.com">loganvaleski@gmail.com</a> |
-            <a href="https://github.com/lcvaleski/">GitHub</a>
+    
+    <div class="container">
+        <div class="city">
+            <img src="logan.jpg" alt="Meandering Sleep" style="width:30px;border-radius: 25%;">
+            <p style="padding-top: 5%;"><strong>Logan Valeski</strong></p>
+            <a href="/resume.html">Resume</a>
+            <a href="https://github.com/lcvaleski">Github</a>
         </div>
-    </header>
-
-    <section>
-        <h2>EDUCATION</h2>
-        <div class="experience-item">
-            <div class="job-title">
-                <span>Fordham University, Rose Hill</span>
-                <span>The Bronx, New York</span>
-            </div>
-            <div class="job-title">
-                <span>Bachelor of Science, Computer Science</span>
-                <span>Expected May 2026</span>
-            </div>
+        <div class="city">
+            <img src="meandering_icon.png" alt="Meandering Sleep" style="width:30px;border-radius: 25%;">
+            <p style="padding-top: 5%;"><strong>Current project</strong></p>
+            <a href="https://play.google.com/store/apps/details?id=net.coventry.sleepless&hl=en">Play Store</a>
+            <a href="https://apps.apple.com/us/app/meandering-sleep/id6502964632">App Store</a>
+            <a href="https://github.com/lcvaleski/meandering-cloudflare">Backend code</a>
+            <a href="https://github.com/meanderingsleep/meandering-app">Frontend code </a>
         </div>
-    </section>
-
-    <section>
-        <h2>LANGUAGES/SKILLS</h2>
-        <p><strong>Languages/frameworks:</strong> Python, Dart + Flutter, Kotlin, Jetpack Compose, Swift, C++, TypeScript, Flask</p>
-        <p><strong>Skills:</strong> Firebase, Git, Dependency Injection, CI/CD, Strong HTTP protocol knowledge, Figma, AWS, Cloudflare</p>
-    </section>
-
-    <section>
-        <h2>EXPERIENCE</h2>
-        <div class="experience-item">
-            <div class="job-title">
-                <span>Stream (getstream.io)</span>
-                <span>Boulder, Colorado</span>
-            </div>
-            <div class="job-title">
-                <span>Flutter SDK Software Engineer - Intern</span>
-                <span>May 2024 - Aug. 2024</span>
-            </div>
-            <ul>
-                <li>Developed a Flutter classroom app using Stream's Live Video/Chat SDK</li>
-                <li>Contributed to Flutter Video SDK to clarify video stability issue</li>
-                <li>Exposure to Kotlin / Swift native implementation</li>
-                <li>Also developed TypeScript RAG LLM-chatbot for clients to chat over Stream's docs</li>
-            </ul>
-        </div>
-
-        <div class="experience-item">
-            <div class="job-title">
-                <span>Freeplay AI (freeplay.ai)</span>
-                <span>Boulder, Colorado</span>
-            </div>
-            <div class="job-title">
-                <span>Full-Stack Software Engineer - Intern</span>
-                <span>Feb. 2023 - Aug. 2023</span>
-            </div>
-            <ul>
-                <li>Leveraged Flask, SQL, and Python to help develop an AI prompt engineering platform</li>
-                <li>Influenced early proxy utilization architecture decision</li>
-                <li>Gained experience in architecting for security compliance</li>
-            </ul>
-        </div>
-
-        <div class="experience-item">
-            <div class="job-title">
-                <span>Waking Up App (wakingup.com)</span>
-                <span>The Bronx, New York</span>
-            </div>
-            <div class="job-title">
-                <span>Project Manager - Intern</span>
-                <span>June 2023 – Present</span>
-            </div>
-            <ul>
-                <li>Developed a program enabling university meditation communities across the U.S</li>
-                <li>Lead of team comprising Fordham, Brown, Rutgers</li>
-                <li>Partnered with Fordham administration to provide free access to app for all students/faculty</li>
-            </ul>
-        </div>
-
-        <div class="experience-item">
-            <div class="job-title">
-                <span>Rollins Barbershop</span>
-                <span>Boulder, Colorado</span>
-            </div>
-            <div class="job-title">
-                <span>Shop-hand</span>
-                <span>Summer 2021</span>
-            </div>
-            <ul>
-                <li>Managed appointments and kept shop in working order</li>
-            </ul>
-        </div>
-    </section>
-
-    <section>
-        <h2>PROJECTS & LEADERSHIP</h2>
-        <div class="experience-item">
-            <div class="job-title">
-                <span>Meandering Sleep (Self-Published on Android Play Store / Apple App Store)</span>
-                <span>The Bronx, New York</span>
-            </div>
-            <div class="job-title">
-                <span>Creator</span>
-            </div>
-            <ul>
-                <li>First place in Fordham Foundry Pitch Competition</li>
-                <li>Developed Flutter-based sleep-story app from scratch</li>
-                <li>Synthesizing long-duration AI text-to-speech audio through an in-house generation system</li>
-                <li>Set-up an LLC and ensured privacy and security compliance for the Play Store / App Store</li>
-                <li>Tools used: Flutter, React, AWS, Cloudflare, Cron, Bash, Python, OpenAI, Cartesia, Typescript</li>
-            </ul>
-        </div>
-
-        <div class="experience-item">
-            <div class="job-title">
-                <span>Fordham Meditation Club</span>
-                <span>Sept. 2023 - Present</span>
-            </div>
-            <div class="job-title">
-                <span>Founder</span>
-            </div>
-            <ul>
-                <li>Founded Fordham's first university recognized meditation club, 35 members</li>
-            </ul>
-        </div>
-    </section>
+    </div>
 </body>
 </html>
