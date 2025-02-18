@@ -8,21 +8,36 @@
             padding-top: env(safe-area-inset-top);
             margin: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            min-height: 100vh;
             background-color: rgb(243, 243, 243);
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        }
+        .image-container {
+            max-width: 800px;
+            padding: 20px;
         }
         img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
-            max-height: 90vh;
-            object-fit: contain;
-            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
-    <img src="../assets/pics/evan_lookout.jpeg" alt="Evan at the lookout">
+    <div class="image-container">
+        <img src="../assets/pics/evan_lookout.jpeg" alt="Evan at a mountain lookout">
+        <img src="../assets/pics/gold_hill.jpeg" alt="Gold Hill scenic view">
+        <img src="../assets/pics/carmel.jpeg" alt="Carmel beach">
+        <img src="../assets/pics/ryan.jpeg" alt="Ryan portrait">
+        <img src="../assets/pics/gti.jpeg" alt="GTI car">
+        <img src="../assets/pics/annie.jpeg" alt="Annie portrait">
+        <img src="../assets/pics/annie_tattoo.jpeg" alt="Annie's tattoo">
+        <img src="../assets/pics/sweet_mom.jpeg" alt="Mom's portrait">
+        <img src="../assets/pics/santa_cruz.jpeg" alt="Santa Cruz beach">
+        <img src="../assets/pics/santa_cruz_light.jpeg" alt="Santa Cruz lighthouse">
+        <img src="../assets/pics/dad.jpeg" alt="Dad's portrait">
+    </div>
 </body>
 </html>
