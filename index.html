@@ -15,39 +15,39 @@
             font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
         }
         .container {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+            gap: 20px;
             justify-content: center;
             max-width: 1200px;
             margin-top: env(safe-area-inset-top);
+            padding: 20px;
         }
         .city {
             background-color: rgb(243, 243, 243);
             border: 3.5px solid rgb(233, 233, 233);
-            margin: 20px;
             padding: 20px;
             width: 225px;
-            height: 225px;
+            height: fit-content;
             display: flex;
             flex-direction: column;
             align-items: center;
             box-sizing: border-box;
-            overflow: auto;
             border-radius: 6px;
+            margin: 0;
         }
         .cityMeandering {
             background-color: rgb(243, 243, 243);
             border: 3.5px solid rgb(233, 233, 233);
-            margin: 20px;
             padding: 20px;
             width: 225px;
-            height: 300px;
+            height: fit-content;
             display: flex;
             flex-direction: column;
             align-items: center;
             box-sizing: border-box;
-            overflow: auto;
             border-radius: 6px;
+            margin: 0;
         }
         .city p.title {
             margin-top: 10px;
@@ -56,16 +56,15 @@
         .cityWIP {
             background-color: rgb(243, 243, 243);
             border: 0.1px solid transparent;
-            margin: 20px;
             padding: 5px;
             width: 200px;
-            height: 200px;
+            height: fit-content;
             display: flex;
             flex-direction: column;
             align-items: center;
             box-sizing: border-box;
-            overflow: auto;
             border-radius: 6px;
+            margin: 0;
             background-image: linear-gradient(rgb(243, 243, 243), rgb(243, 243, 243)), 
                             linear-gradient(45deg, 
                                             black 25%, yellow 25%, 
@@ -77,6 +76,8 @@
         }
         p, a {
             margin: 5px 0;
+            word-break: break-word;
+            max-width: 100%;
         }
         .chess-easter-egg {
             position: fixed;
