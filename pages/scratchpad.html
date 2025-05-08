@@ -23,9 +23,15 @@
             border-radius: 4px;
             font-size: 16px;
             line-height: 1.5;
-            resize: vertical;
             background-color: white;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .editor:focus {
+            outline: none;
+            border-color: #007bff;
         }
         .controls {
             margin-top: 10px;
@@ -78,7 +84,7 @@
         </svg>
     </a>
     <div class="container">
-        <textarea id="editor" class="editor" placeholder="Start typing here..."></textarea>
+        <div id="editor" class="editor" contenteditable="true" placeholder="Start typing here..."></div>
         <div id="status" class="status">This is a scratchpad that saves to your local browser storage, NOT to a database. This is all private for your own use and can't be shared</div>
         <div id="status" class="status">Auto-saves every 5 seconds</div>
     </div>
@@ -88,15 +94,24 @@
         window.onload = function() {
             const savedText = localStorage.getItem('scratchpadText');
             if (savedText) {
-                document.getElementById('editor').value = savedText;
+                document.getElementById('editor').innerHTML = savedText;
             }
         }
 
         // Save text to localStorage
         function saveText() {
-            const text = document.getElementById('editor').value;
+            const text = document.getElementById('editor').innerHTML;
             localStorage.setItem('scratchpadText', text);
         }
+
+        // Handle keyboard shortcuts
+        document.getElementById('editor').addEventListener('keydown', function(e) {
+            // Check for Command+B (Mac) or Ctrl+B (Windows/Linux)
+            if ((e.metaKey || e.ctrlKey) && e.key === 'b') {
+                e.preventDefault(); // Prevent default browser behavior
+                document.execCommand('bold', false, null);
+            }
+        });
 
         // Auto-save every 5 seconds
         setInterval(saveText, 5000);
