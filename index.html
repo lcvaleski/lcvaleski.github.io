@@ -110,6 +110,24 @@
             fill: currentColor;
             vertical-align: bottom;
         }
+        .notepad-easter-egg {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            text-decoration: none;
+            opacity: 0.3;
+            transition: opacity 0.3s ease;
+            color: inherit;
+        }
+        .notepad-easter-egg:hover {
+            opacity: 1;
+        }
+        .notepad-easter-egg svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+            vertical-align: bottom;
+        }
     </style>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -160,6 +178,11 @@
     <a href="/pages/pics.html" class="pics-easter-egg" title="Pix">
         <svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
             <path d="M45 30c-10 0-18 8-18 18s8 18 18 18 18-8 18-18-8-18-18-18zm0 29c-6 0-11-5-11-11s5-11 11-11 11 5 11 11-5 11-11 11zm22-37H57l-2-6c-1-2-3-4-6-4H41c-3 0-5 2-6 4l-2 6H23c-4 0-7 3-7 7v30c0 4 3 7 7 7h44c4 0 7-3 7-7V29c0-4-3-7-7-7zm0 37H23V29h13l4-9h10l4 9h13v30z"/>
+        </svg>
+    </a>
+    <a href="/pages/scratchpad.html" class="notepad-easter-egg" title="Scratchpad">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/>
         </svg>
     </a>
 </body>
