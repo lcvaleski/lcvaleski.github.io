@@ -128,6 +128,24 @@
         *, *::before, *::after {
             box-sizing: border-box;
         }
+        .syllabus-easter-egg {
+            position: fixed;
+            bottom: 10px;
+            right: 40px;
+            text-decoration: none;
+            opacity: 0.3;
+            transition: opacity 0.3s ease;
+            color: inherit;
+        }
+        .syllabus-easter-egg:hover {
+            opacity: 1;
+        }
+        .syllabus-easter-egg svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+            vertical-align: bottom;
+        }
     </style>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -158,7 +176,6 @@
             <a href="https://github.com/meanderingsleep/meandering-app">Code</a>
             <p>🏆 1st Place - Fordham Foundry Pitch Challenge (160 total teams)</p>
             <p>🏆 2nd Place - Santa Clara University Pitch Competition</p>
-
         </div>
         <div class="city">
             <img src="/assets/retain_icon.png" alt="Retain" style="width:30px; height:30px; border-radius: 25%;">
@@ -175,6 +192,11 @@
         </div>
     </div>
     <a href="pages/chess.html" class="chess-easter-egg" title="Chess Wars">♔</a>
+    <a href="/pages/syllabus/index.html" class="syllabus-easter-egg" title="Syllabus">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/>
+        </svg>
+    </a>
     <a href="/pages/pics.html" class="pics-easter-egg" title="Pix">
         <svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
             <path d="M45 30c-10 0-18 8-18 18s8 18 18 18 18-8 18-18-8-18-18-18zm0 29c-6 0-11-5-11-11s5-11 11-11 11 5 11 11-5 11-11 11zm22-37H57l-2-6c-1-2-3-4-6-4H41c-3 0-5 2-6 4l-2 6H23c-4 0-7 3-7 7v30c0 4 3 7 7 7h44c4 0 7-3 7-7V29c0-4-3-7-7-7zm0 37H23V29h13l4-9h10l4 9h13v30z"/>
