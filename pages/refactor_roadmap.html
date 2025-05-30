@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Refactor Roadmap - Meandering Sleep</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+            background: #fff;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 40px auto 0 auto;
+            padding: 0 16px;
+        }
+        .roadmap-title {
+            font-size: 1.7em;
+            font-weight: normal;
+            margin: 0 0 32px 0;
+            text-align: center;
+        }
+        .milestone-tracker {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            gap: 24px;
+            margin-top: 32px;
+        }
+        .milestone-tracker::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #bbb 0%, #bbb 100%);
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+        .milestone {
+            display: block;
+            position: relative;
+            z-index: 1;
+            padding: 14px 28px;
+            font-size: 1.08em;
+            background: #f9f9f9;
+            color: #222;
+            border: 2px solid #000;
+            font-family: inherit;
+            text-align: center;
+            min-width: 180px;
+            font-weight: normal;
+            box-sizing: border-box;
+            border-radius: 6px;
+            transition: border 0.2s, background 0.2s;
+            margin: 0;
+        }
+        .milestone.completed {
+            border-color: #3cb371;
+            background: #eafaf1;
+        }
+        .milestone.current {
+            border-color: #ffd600;
+            background: #fffbe6;
+        }
+        .milestone.future {
+            border-color: #bbb;
+            background: #f4f4f4;
+        }
+        .connector {
+            display: none;
+        }
+        @media (max-width: 600px) {
+            .milestone {
+                font-size: 0.95em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="roadmap-title">Meandering Sleep Refactor Roadmap</div>
+        <div class="milestone-tracker">
+            <div class="milestone completed">Week 1: Authentication</div>
+            <div class="milestone current">Week 2: Audio Player MVP + Paywall</div>
+            <div class="milestone future">Week 3: ?</div>
+            <div class="milestone future">Week 4: ?</div>
+            <div class="milestone future">Week 5: ?</div>
+            <div class="milestone future">Week 6: ?</div>
+            <div class="milestone future">Week 7: ?</div>
+            <div class="milestone future">Week 8: ?</div>
+            <div class="milestone future">Week 9: ?</div>
+            <div class="milestone future">Week 10: ?</div>
+        </div>
+    </div>
+</body>
+</html> 
