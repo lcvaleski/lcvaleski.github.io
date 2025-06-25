@@ -94,13 +94,13 @@
         window.onload = function() {
             const savedText = localStorage.getItem('scratchpadText');
             if (savedText) {
-                document.getElementById('editor').innerHTML = savedText;
+                document.getElementById('editor').textContent = savedText;
             }
         }
 
         // Save text to localStorage
         function saveText() {
-            const text = document.getElementById('editor').innerHTML;
+            const text = document.getElementById('editor').textContent;
             localStorage.setItem('scratchpadText', text);
         }
 
