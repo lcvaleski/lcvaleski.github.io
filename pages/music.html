@@ -17,73 +17,12 @@
             max-width: 500px;
             padding: 20px;
         }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 20px;
-            font-size: 1.1em;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #ccc;
-        }
-        li:last-child {
-            border-bottom: none;
-        }
-        a {
-            text-decoration: none;
-            color: #222;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .artist {
-            font-weight: bold;
-        }
-        .song {
-            font-style: italic;
-        }
     </style>
 </head>
 <body>
     <div class="music-container">
         <h1>2025</h1>
-        <ul id="song-list">
-            <li><a href="https://open.spotify.com/track/3AhXZa8sUQht0UEdBJgpGc" target="_blank"><span class="artist">Bob Dylan</span> / <span class="song">The Man in Me</span></a></li>
-            <li><a href="https://open.spotify.com/track/3qT4bUD1MaWpGrTwcvguhb" target="_blank"><span class="artist">Led Zeppelin</span> / <span class="song">Tangerine - Remaster</span></a></li>
-            <li><a href="https://open.spotify.com/track/1Qrg8KqiBpW07V7PNxwwwL" target="_blank"><span class="artist">Daryl Hall & John Oates</span> / <span class="song">When the Morning Comes</span></a></li>
-            <li><a href="https://open.spotify.com/track/0GONea6G2XdnHWjNZd6zt3" target="_blank"><span class="artist">Pink Floyd</span> / <span class="song">Fearless</span></a></li>
-            <li><a href="https://open.spotify.com/track/3XVBdLihbNbxUwZosxcGuJ" target="_blank"><span class="artist">Grateful Dead</span> / <span class="song">Friend of the Devil</span></a></li>
-            <li><a href="https://open.spotify.com/track/6K4t31amVTZDgR3sKmwUJJ" target="_blank"><span class="artist">Jimi Hendrix</span> / <span class="song">Castles Made of Sand</span></a></li>
-            <li><a href="https://open.spotify.com/track/3qT4bUD1MaWpGrTwcvguhb" target="_blank"><span class="artist">Led Zeppelin</span> / <span class="song">That's the Way - Remaster</span></a></li>
-            <li><a href="https://open.spotify.com/track/7pKfPomDEeI4TPT6EOYjn9" target="_blank"><span class="artist">Jimi Hendrix</span> / <span class="song">Bold as Love</span></a></li>
-        </ul>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2aFNCFZIN2MdcnAWxbRqoo?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
-
-    <script>
-        // Fisher-Yates shuffle algorithm
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        }
-
-        // Shuffle the songs when the page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            const songList = document.getElementById('song-list');
-            const songs = Array.from(songList.children);
-            
-            // Shuffle the songs
-            const shuffledSongs = shuffleArray(songs);
-            
-            // Clear the list and add shuffled songs back
-            songList.innerHTML = '';
-            shuffledSongs.forEach(song => {
-                songList.appendChild(song);
-            });
-        });
-    </script>
 </body>
-</html> 
+</html>
