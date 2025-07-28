@@ -66,9 +66,26 @@
         a:hover {
             text-decoration: underline;
         }
+        
+        @media print {
+            button {
+                display: none;
+            }
+            body {
+                max-width: 100%;
+                margin: 0;
+                padding: 20px;
+            }
+            hr {
+                page-break-after: auto;
+            }
+        }
     </style>
 </head>
 <body>
+    <div style="text-align: right; margin-bottom: 20px;">
+        <button onclick="navigator.clipboard.writeText(window.location.href).then(() => { this.textContent = 'Copied!'; setTimeout(() => { this.textContent = 'Copy Link'; }, 2000); })" style="padding: 6px 12px; background-color: #f0f0f0; color: #666; border: 1px solid #ddd; border-radius: 3px; cursor: pointer; font-size: 12px;">Copy Link</button>
+    </div>
     <header style="text-align: left; margin-bottom: 30px;">
         <div style="font-weight: normal;">Logan Valeski at gee mail dot com</div>
     </header>
