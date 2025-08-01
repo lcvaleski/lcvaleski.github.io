@@ -123,6 +123,7 @@
             
             form.addEventListener('submit', async function(e) {
                 e.preventDefault();
+                console.log('Form submitted');
                 
                 const email = emailInput.value;
                 const originalPlaceholder = emailInput.placeholder;
@@ -208,8 +209,12 @@
             <a href="/pages/bike_post/biking_to_class.html">Biking to class from The Bronx to the UWS</a>
             <a href="/pages/ellie_post/to_code.html">Commit 79780b0</a>
             <hr style="margin: 15px 0; border: none; border-top: 1px solid #d0d0d0; width: 100%;">
-            <form id="subscribe-form" style="margin-top: 10px; width: 100%;">
+            <form id="subscribe-form" 
+                  action="https://formspree.io/f/xovllbba" 
+                  method="POST"
+                  style="margin-top: 10px; width: 100%;">
                 <input type="email" 
+                       name="email"
                        placeholder="Subscribe to posts" 
                        required
                        style="width: 100%; 
@@ -220,8 +225,6 @@
                               font-family: inherit;
                               box-sizing: border-box;
                               background-color: white;">
-                <button type="submit" 
-                        style="display: none;">Subscribe</button>
             </form>
         </div>
     </div>
