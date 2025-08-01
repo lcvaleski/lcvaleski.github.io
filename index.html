@@ -220,19 +220,31 @@
             <form id="subscribe-form" 
                   action="https://formspree.io/f/xovllbba" 
                   method="POST"
-                  style="margin-top: 10px; width: 100%;">
+                  style="margin-top: 10px; width: 100%; display: flex; gap: 4px; box-sizing: border-box;">
                 <input type="email" 
                        name="email"
                        placeholder="Subscribe to posts" 
                        required
-                       style="width: 100%; 
+                       style="flex: 1; 
+                              min-width: 0;
                               padding: 8px 12px; 
                               border: 1px solid #d0d0d0; 
                               border-radius: 4px; 
-                              font-size: 14px; 
+                              font-size: 12px; 
                               font-family: inherit;
                               box-sizing: border-box;
                               background-color: white;">
+                <button type="submit"
+                        style="padding: 8px 12px;
+                               border: 1px solid #d0d0d0;
+                               border-radius: 4px;
+                               font-size: 14px;
+                               font-family: inherit;
+                               background-color: white;
+                               cursor: pointer;
+                               flex-shrink: 0;">
+                    →
+                </button>
             </form>
         </div>
     </div>
