@@ -67,8 +67,28 @@
             text-decoration: underline;
         }
         
+        .long-only {
+            display: none;
+        }
+        
+        .version-toggle {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .version-toggle a {
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        
+        .version-toggle a.active {
+            font-weight: bold;
+            color: #333;
+            pointer-events: none;
+        }
+        
         @media print {
-            button {
+            button, .version-toggle {
                 display: none;
             }
             body {
@@ -79,10 +99,17 @@
             hr {
                 page-break-after: auto;
             }
+            .long-only {
+                display: block;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="version-toggle">
+        <a id="short-version" class="active" onclick="toggleVersion('short')">Short Version</a>
+        <a id="long-version" onclick="toggleVersion('long')">Long Version</a>
+    </div>
     <div style="text-align: right; margin-bottom: 20px;">
         <button onclick="navigator.clipboard.writeText(window.location.href).then(() => { this.textContent = 'Copied!'; setTimeout(() => { this.textContent = 'Copy Link'; }, 2000); })" style="padding: 6px 12px; background-color: #f0f0f0; color: #666; border: 1px solid #ddd; border-radius: 3px; cursor: pointer; font-size: 12px;">Copy Link</button>
     </div>
@@ -102,6 +129,9 @@
             </div>
             <div class="bullets">
                 <div class="bullet-item">↳ Data instrumentation for app release cycles. Looker, BigQ, Amplitude.</div>
+                <div class="bullet-item long-only">↳ In charge of migrating Looker data connection from Postgres to BigQuery</div>
+                <div class="bullet-item long-only">↳ Answering company-wide KPI questions daily</div>
+                <div class="bullet-item long-only">↳ Writing data test cases, instrumentation specs, QA requirements</div>
             </div>
         </div>
         <div class="experience-item">
@@ -114,6 +144,8 @@
             </div>
             <div class="bullets">
                 <div class="bullet-item">↳ Developed a Flutter-based classroom app using Stream's new Live Video/Chat SDK</div>
+                <div class="bullet-item long-only">↳ Exposure to native Android implementation (Kotlin)</div>
+                <div class="bullet-item long-only">↳ Developed a proof of concept RAG documentation chatbot using Typescript / Huggingface, now in production</div>
             </div>
         </div>
 
@@ -127,6 +159,8 @@
             </div>
             <div class="bullets">
                 <div class="bullet-item">↳ Leveraged Flask, SQL, and Python to help develop an AI evaluation platform</div>
+                <div class="bullet-item">↳ Sat in on early architecture meetings for long term privacy compliance</div>
+                <div class="bullet-item">↳ Performed market competition research</div>
             </div>
         </div>
         
@@ -143,6 +177,7 @@
             <div class="bullets">
                 <div class="bullet-item">↳ Sleep app taking advantage of AI hallucinations.</div>
                 <div class="bullet-item">↳ 1st Place - Fordham Foundry Pitch Challenge (160 total teams)</div>
+                <div class="bullet-item">↳ 2nd Place - Santa Clara University Pitch Competition</div>
             </div>
         </div>
         
@@ -176,5 +211,22 @@
         </div>
     </section>
     
+    <script>
+        function toggleVersion(version) {
+            const shortLink = document.getElementById('short-version');
+            const longLink = document.getElementById('long-version');
+            const longElements = document.querySelectorAll('.long-only');
+            
+            if (version === 'short') {
+                shortLink.classList.add('active');
+                longLink.classList.remove('active');
+                longElements.forEach(el => el.style.display = 'none');
+            } else {
+                shortLink.classList.remove('active');
+                longLink.classList.add('active');
+                longElements.forEach(el => el.style.display = 'block');
+            }
+        }
+    </script>
 </body>
 </html>
