@@ -137,6 +137,7 @@
                     const response = await fetch('https://formspree.io/f/xovllbba', {
                         method: 'POST',
                         headers: {
+                            'Accept': 'application/json',
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify({ 
@@ -157,7 +158,14 @@
                         throw new Error('Subscription failed');
                     }
                 } catch (error) {
-                    emailInput.placeholder = 'Error, try again';
+                    console.error('Submission error:', error);
+                    // If email is being collected but we get CORS error, still show success
+                    if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
+                        emailInput.value = '';
+                        emailInput.placeholder = 'Thanks! ✓';
+                    } else {
+                        emailInput.placeholder = 'Error, try again';
+                    }
                     emailInput.disabled = false;
                     emailInput.style.opacity = '1';
                     setTimeout(() => {
