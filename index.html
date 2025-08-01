@@ -116,6 +116,55 @@
   gtag('config', 'G-WQS4TZXCNS');
 </script>
 <body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('subscribe-form');
+            const emailInput = form.querySelector('input[type="email"]');
+            
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const email = emailInput.value;
+                const originalPlaceholder = emailInput.placeholder;
+                
+                try {
+                    // Using Formspree to collect emails safely in a public repo
+                    const response = await fetch('https://formspree.io/f/xovllbba', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ 
+                            email: email,
+                            _subject: 'New blog subscriber'
+                        })
+                    });
+                    
+                    if (response.ok) {
+                        emailInput.value = '';
+                        emailInput.placeholder = 'Thanks! ✓';
+                        setTimeout(() => {
+                            emailInput.placeholder = originalPlaceholder;
+                        }, 3000);
+                    } else {
+                        throw new Error('Subscription failed');
+                    }
+                } catch (error) {
+                    emailInput.placeholder = 'Error, try again';
+                    setTimeout(() => {
+                        emailInput.placeholder = originalPlaceholder;
+                    }, 3000);
+                }
+            });
+            
+            // Submit on Enter key
+            emailInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    form.dispatchEvent(new Event('submit'));
+                }
+            });
+        });
+    </script>
     
     <div class="container">
         <div class="city">
@@ -155,6 +204,22 @@
             <hr style="margin: 15px 0; border: none; border-top: 1px solid #d0d0d0; width: 100%;">
             <a href="/pages/bike_post/biking_to_class.html">Biking to class from The Bronx to the UWS</a>
             <a href="/pages/ellie_post/to_code.html">Commit 79780b0</a>
+            <hr style="margin: 15px 0; border: none; border-top: 1px solid #d0d0d0; width: 100%;">
+            <form id="subscribe-form" style="margin-top: 10px; width: 100%;">
+                <input type="email" 
+                       placeholder="Subscribe to posts" 
+                       required
+                       style="width: 100%; 
+                              padding: 8px 12px; 
+                              border: 1px solid #d0d0d0; 
+                              border-radius: 4px; 
+                              font-size: 14px; 
+                              font-family: inherit;
+                              box-sizing: border-box;
+                              background-color: white;">
+                <button type="submit" 
+                        style="display: none;">Subscribe</button>
+            </form>
         </div>
     </div>
 </body>
