@@ -111,6 +111,9 @@
         <a id="long-version" onclick="toggleVersion('long')">Long Version</a>
     </div>
     <header style="text-align: left; margin-bottom: 30px;">
+        <div style="margin-bottom: 10px;">
+            <a id="download-link" href="../assets/resume_short.pdf" download>Download</a>
+        </div>
         <div style="font-weight: normal;">Logan Valeski at gee mail dot com</div>
         <div style="font-weight: normal;"><a href="https://github.com/lcvaleski">https://github.com/lcvaleski</a></div>
     </header>
@@ -215,15 +218,18 @@
             const shortLink = document.getElementById('short-version');
             const longLink = document.getElementById('long-version');
             const longElements = document.querySelectorAll('.long-only');
+            const downloadLink = document.getElementById('download-link');
             
             if (version === 'short') {
                 shortLink.classList.add('active');
                 longLink.classList.remove('active');
                 longElements.forEach(el => el.style.display = 'none');
+                downloadLink.href = '../assets/resume_short.pdf';
             } else {
                 shortLink.classList.remove('active');
                 longLink.classList.add('active');
                 longElements.forEach(el => el.style.display = 'block');
+                downloadLink.href = '../assets/resume_long.pdf';
             }
         }
     </script>
