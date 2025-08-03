@@ -18,19 +18,18 @@ Since this is a static site with no build process:
 ### Page Organization
 - **index.html**: Main landing page with project cards and hidden corner navigation
 - **pages/**: All subpages organized by type
-  - Blog posts are in subdirectories (e.g., `bike_post/`, `boulder_post/`)
-  - Standalone pages are HTML files (e.g., `chess.html`, `music.html`)
+  - Blog posts are in subdirectories (e.g., `bike_post/`, `boulder_post/`, `ellie_post/`)
+  - Standalone pages are HTML files (e.g., `music.html`, `pics.html`)
+  - **archived/**: Contains removed pages that are no longer linked
 - **assets/**: Images and icons, with `pics/` subdirectory for photo gallery
-- **styles/**: Global CSS (`globals.css`) and page-specific styles
+- **styles/**: Global CSS (`globals.css`) and page-specific styles (e.g., `syllabus.css`)
 
 ### Key Implementation Details
 
 1. **Hidden Navigation**: The homepage has clickable areas in the corners that link to hidden pages:
-   - Top-left: Chess game
    - Top-right: Photo gallery
-   - Bottom-left: Syllabus
    - Bottom-right: Music player
-   - Center-bottom: Scratchpad
+   - Note: Chess, Syllabus, and Scratchpad pages have been archived and are no longer linked
 
 2. **Consistent Page Structure**: Most pages follow this pattern:
    ```html
