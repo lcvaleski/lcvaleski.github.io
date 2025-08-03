@@ -128,12 +128,10 @@
                 const email = emailInput.value;
                 const originalPlaceholder = emailInput.placeholder;
                 
-                // Immediate visual feedback
                 emailInput.disabled = true;
                 emailInput.style.opacity = '0.7';
                 
                 try {
-                    // Using Formspree to collect emails safely in a public repo
                     const response = await fetch('https://formspree.io/f/xovllbba', {
                         method: 'POST',
                         headers: {
@@ -159,7 +157,7 @@
                     }
                 } catch (error) {
                     console.error('Submission error:', error);
-                    // If email is being collected but we get CORS error, still show success
+
                     if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
                         emailInput.value = '';
                         emailInput.placeholder = 'Thanks! ✓';
@@ -173,8 +171,6 @@
                     }, 3000);
                 }
             });
-            
-            // Submit on Enter key is handled automatically by the form
         });
     </script>
     
@@ -196,13 +192,6 @@
             <p>↳  1st Place - Fordham Foundry Pitch Challenge (160 total teams)</p>
             <p>↳  2nd Place - Santa Clara University Pitch Competition</p>
         </div>
-        <!-- <div class="city">
-            <img src="/assets/retain_icon.png" alt="Retain" style="width:30px; height:30px; border-radius: 25%;">
-            <p class="title">Retain</p>
-            <a href="https://www.retainvoice.com/">Site</a>
-            <a href="https://github.com/lcvaleski/retain-react-app">Code</a>
-            <p>Family voice archiving through voice cloning</p>
-        </div> -->
         <div class="city">
             <img src="/assets/sleep_icon.png" alt="History Sleep" style="width:30px; height:30px; border-radius: 25%;">
             <p class="title">History Sleep</p>
