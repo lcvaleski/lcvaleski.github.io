@@ -58,6 +58,7 @@ Since this is a static site with no build process:
    - Most pages use inline `<style>` tags for self-contained styling
    - `globals.css` provides shared styles for some pages
    - CSS variables for consistent color schemes
+   - **Canonical max-width**: All content areas should use `max-width: 700px` for consistency across posts, pages, and other content
 
 ### Common Tasks
 
