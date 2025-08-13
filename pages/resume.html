@@ -116,15 +116,16 @@
 </head>
 <body>
     <div class="version-toggle">
-        <a id="short-version" class="active" onclick="toggleVersion('short')">Short Version</a>
-        <a id="long-version" onclick="toggleVersion('long')">Long Version</a>
+        <a id="long-version" class="active" onclick="toggleVersion('long')">Long Version</a>
+        <a id="short-version" onclick="toggleVersion('short')">Short Version</a>
     </div>
     <header style="text-align: left; margin-bottom: 30px;">
         <div style="margin-bottom: 10px;">
-            <a id="download-link" href="../assets/resume_short.pdf" download>Download</a>
+            <a id="download-link" href="../assets/resume_long.pdf" download>Download</a>
         </div>
+        <div style="font-weight: normal;">Blog: <a href="https://logan.valeski.org">logan.valeski.org</a></div>
         <div style="font-weight: normal;">loganvaleski@gmail.com | 720-256-1768</div>
-        <div style="font-weight: normal;"><a href="https://logan.valeski.org">logan.valeski.org</a></div>
+        <div style="font-weight: normal;"><a href="https://www.linkedin.com/in/logan-valeski-2a81bb20b/">LinkedIn</a></div>
     </header>
     <section>
         <hr style="border: none; border-top: 1px solid #ccc; margin: 20px 0;">
@@ -137,8 +138,9 @@
                 <span>Summer 2025</span>
             </div>
             <div class="bullets">
-                <div class="bullet-item">↳ Data instrumentation for app release cycles. Looker, BigQ, Amplitude.</div>
+                <div class="bullet-item">↳ Making sure the Waking Up Meditation App gets the business intelligence it needs in each update using Looker, BigQuery, Amplitude</div>
                 <div class="bullet-item long-only">↳ Migrated Looker data connection from Postgres to BigQuery resulting in more powerful data modeling ability</div>
+                <div class="bullet-item long-only">↳ Wrote an interface with custom Python reporting scripts for the data team</div>
                 <div class="bullet-item long-only">↳ Answering company-wide KPI questions daily</div>
                 <div class="bullet-item long-only">↳ Writing data test cases (making sure events from new updates are fired correctly), instrumentation specs, QA requirements</div>
             </div>
@@ -152,8 +154,8 @@
                 <span>Summer 2024</span>
             </div>
             <div class="bullets">
-                <div class="bullet-item">↳ Developed a classroom app using Stream's new Live Video/Chat SDK to show clients as example usage</div>
-                <div class="bullet-item long-only">↳ Written using Flutter. Also exposure to native Android implementation (Kotlin)</div>
+                <div class="bullet-item">↳ Developed a classroom video app using Stream's new Live Video/Chat SDK, now shown to clients as example usage of Stream's services</div>
+                <div class="bullet-item long-only">↳ Written using Flutter, Google's mobile app developement framework. Also exposure to native Android implementation (Kotlin)</div>
                 <div class="bullet-item long-only">↳ Spearheaded a documentation chatbot using Typescript / Huggingface, now for use on their website</div>
             </div>
         </div>
@@ -167,9 +169,9 @@
                 <span>Summer 2023</span>
             </div>
             <div class="bullets">
-                <div class="bullet-item">↳ Leveraged Flask, SQL, and Python to help develop an AI evaluation platform</div>
-                <div class="bullet-item long-only">↳ Observed and contributed in early architecture meetings for long term privacy compliance (made case for proxy utilization)</div>
-                <div class="bullet-item long-only">↳ Performed market competition research</div>
+                <div class="bullet-item">↳ Contributed to the development of a generative AI evaluation platform from ground zero using Flask, SQL, Python</div>
+                <div class="bullet-item long-only">↳ Observed and contributed in early architecture meetings for long term privacy compliance (made case for proxy utilization to achieve Soc2 compliance)</div>
+                <div class="bullet-item long-only">↳ Performed market competition research resulting in finding our PMF more quickly</div>
             </div>
         </div>
         
@@ -185,10 +187,10 @@
             </div>
             <div class="bullets">
                 <div class="bullet-item">↳ Sleep story audio app taking advantage of AI hallucinations</div>
+                <div class="bullet-item">↳ <strong>1st Place</strong> - Fordham Foundry Pitch Challenge (160 total teams)</div>
                 <div class="bullet-item">↳ Developed for Android and iOS using React-Native and ElevenLabs</div>
                 <div class="bullet-item long-only">↳ Built out full CI/CD (Codemagic builds -> App / Play Store Testing), CMS platform (for remote audio upload / deletion)</div>
                 <div class="bullet-item long-only">↳ Utilizing cutting edge text-to-speech providers: Cartesia + ElevenLabs</div>
-                <div class="bullet-item">↳ 1st Place - Fordham Foundry Pitch Challenge (160 total teams)</div>
             </div>
         </div>
         
@@ -242,6 +244,11 @@
                 downloadLink.href = '../assets/resume_long.pdf';
             }
         }
+        
+        // Show long version by default
+        window.addEventListener('DOMContentLoaded', () => {
+            toggleVersion('long');
+        });
     </script>
 </body>
 </html>
