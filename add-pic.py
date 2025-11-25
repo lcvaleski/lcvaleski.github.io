@@ -5,7 +5,7 @@ import subprocess
 import re
 from pathlib import Path
 
-def add_pic(file_path, caption=None):
+def add_pic(file_path, caption=None, tags=None):
     # Setup paths
     base_dir = Path(__file__).parent
     pics_dir = base_dir / "assets" / "pics"
@@ -49,14 +49,21 @@ def add_pic(file_path, caption=None):
     # Create alt text
     alt_text = Path(filename).stem.replace('_', ' ').replace('-', ' ')
 
-    # Add new image with optional caption
+    # Add new image with optional caption and tags
+    tags_attr = f' data-tags="{tags}"' if tags else ''
+
     if caption:
-        new_content = f'''        <div class="pic-item">
+        new_content = f'''        <div class="pic-item"{tags_attr}>
             <img src="../assets/pics/{filename}" alt="{alt_text}">
             <p class="caption">{caption}</p>
         </div>'''
     else:
-        new_content = f'        <img src="../assets/pics/{filename}" alt="{alt_text}">'
+        if tags:
+            new_content = f'''        <div class="pic-item"{tags_attr}>
+            <img src="../assets/pics/{filename}" alt="{alt_text}">
+        </div>'''
+        else:
+            new_content = f'        <img src="../assets/pics/{filename}" alt="{alt_text}">'
 
     pattern = r'(<div class="image-container">\s*)'
     html = re.sub(pattern, rf'\1\n{new_content}', html)
@@ -102,4 +109,14 @@ if __name__ == "__main__":
     if not caption:
         caption = None
 
-    sys.exit(add_pic(image_path, caption))
+    # Ask for optional tags
+    print("\n🏷️  Tags (optional, comma-separated, press Enter to skip):")
+    print("   Examples: travel, food, family, nature, nyc, boulder")
+    tags_input = input("> ").strip()
+
+    tags = None
+    if tags_input:
+        # Clean up tags - remove extra spaces and make lowercase
+        tags = ','.join([tag.strip().lower() for tag in tags_input.split(',')])
+
+    sys.exit(add_pic(image_path, caption, tags))

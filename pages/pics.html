@@ -13,11 +13,110 @@
 
         gtag('config', 'G-WQS4TZXCNS');
     </script>
-
+    <style>
+        body {
+            padding-top: env(safe-area-inset-top);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(243, 243, 243);
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        }
+        .tag-filters {
+            max-width: 500px;
+            padding: 20px;
+            margin: 0 auto;
+        }
+        .tag-filters h2 {
+            font-size: 16px;
+            margin: 0 0 12px 0;
+            color: #333;
+            font-weight: 500;
+        }
+        .tag-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .tag-btn {
+            padding: 6px 12px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 20px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #666;
+        }
+        .tag-btn:hover {
+            border-color: #999;
+            background: #f8f8f8;
+        }
+        .tag-btn.active {
+            background: #333;
+            color: white;
+            border-color: #333;
+        }
+        .clear-btn {
+            padding: 6px 12px;
+            border: none;
+            background: transparent;
+            color: #999;
+            font-size: 13px;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .clear-btn:hover {
+            color: #666;
+        }
+        .pic-item.hidden {
+            display: none;
+        }
+        .image-container {
+            max-width: 500px;
+            padding: 20px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 40px;
+            border-radius: 8px;
+        }
+        .pic-item {
+            margin-bottom: 40px;
+        }
+        .pic-item img {
+            margin-bottom: 8px;
+        }
+        .caption {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+            line-height: 1.4;
+        }
+        .pic-date {
+            margin: 4px 0 0 0;
+            font-size: 12px;
+            color: #999;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
 
 </head>
 
 <body>
+    <div class="tag-filters">
+        <h2>Filter by tag</h2>
+        <div class="tag-buttons" id="tagButtons">
+            <!-- Tags will be populated by JavaScript -->
+        </div>
+        <button class="clear-btn" id="clearTags" style="display:none;">Clear all</button>
+    </div>
+
     <div class="image-container">
 
 
@@ -28,175 +127,279 @@
 
 
 
-        <div class="pic-item">
+        <div class="pic-item" data-tags="travel,italy,food">
             <img src="../assets/pics/IMG_0189.jpeg" alt="IMG 0189">
             <p class="caption">cafe</p>
             <p class="pic-date">11/22/25</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="travel,italy,portrait">
             <img src="../assets/pics/IMG_0204.jpeg" alt="IMG 0204">
             <p class="caption">Umberto</p>
             <p class="pic-date">11/22/25</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="travel,italy,architecture">
             <img src="../assets/pics/IMG_0196.jpeg" alt="IMG 0196">
             <p class="caption">Felix Milan Flat</p>
             <p class="pic-date">11/22/25</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="food">
             <img src="../assets/pics/542DA06B-14A2-44EB-8E6F-C83CEB77B03D_1_102_o.jpeg"
                 alt="542DA06B 14A2 44EB 8E6F C83CEB77B03D 1 102 o">
             <p class="caption">Good breakfast</p>
             <p class="pic-date">11/13/25</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="hobbies">
             <img src="../assets/pics/489F2A6A-B741-4065-87A7-AB6F7E1B1FBF_1_102_o.jpeg"
                 alt="489F2A6A B741 4065 87A7 AB6F7E1B1FBF 1 102 o">
             <p class="caption">chess set</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="family,cars">
             <img src="../assets/pics/99CEF77F-F5C3-4CEF-A9CE-C08FD3651218_1_105_c.jpeg"
                 alt="99CEF77F F5C3 4CEF A9CE C08FD3651218 1 105 c">
             <p class="caption">Gramps' Ghia in the fall</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="nyc,home">
             <img src="../assets/pics/0E952FF6-B8FC-4BDA-B316-C5CD3BDAC75B_1_105_c.jpeg"
                 alt="0E952FF6 B8FC 4BDA B316 C5CD3BDAC75B 1 105 c">
             <p class="caption">2542 Room</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="food,nyc,boulder,friends">
             <img src="../assets/pics/B915C4ED-2575-49A4-986C-CA92D0F87532_1_105_c.jpeg"
                 alt="B915C4ED 2575 49A4 986C CA92D0F87532 1 105 c">
             <p class="caption">Claud x Frasca. NYC meets Boulder, great dinner</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="family,dogs">
             <img src="../assets/pics/sunny.jpeg" alt="sunny">
             <p class="caption">Sunny in motion blur</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="nature">
             <img src="../assets/pics/fall.jpeg" alt="fall">
             <p class="caption">Beaver Moon</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="family,dogs">
             <img src="../assets/pics/dog.jpeg" alt="dog">
             <p class="caption">Dad / Sunny. Dad's wrist era.</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="nyc,food,friends">
             <img src="../assets/pics/waverly.jpeg" alt="waverly">
             <p class="caption">Weird Waverly brunch with Quinn. Depth shots.</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="tech,work">
             <img src="../assets/pics/textedit.png" alt="textedit">
             <p class="caption">TextEdit > @EG</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="food">
             <img src="../assets/pics/cookies.png" alt="Cookies">
             <p class="caption">Powerful</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="nyc,sports">
             <img src="../assets/pics/usopen.jpeg" alt="US Open">
             <p class="caption">US Open 2025. Honey Deuces.</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="nyc,home,biking">
             <img src="../assets/pics/bronxroom.jpeg" alt="Bronx Room">
             <p class="caption">New Bike in 2542 Room</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="travel">
             <img src="../assets/pics/towndrunk.jpeg" alt="The Carmel Town Drunk">
             <p class="caption">The Carmel Town Drunk</p>
         </div>
         <!-- <img src="../assets/pics/figure.jpeg" alt="Figure"> -->
-        <div class="pic-item">
+        <div class="pic-item" data-tags="family,biking">
             <img src="../assets/pics/imola.jpg" alt="Imola">
             <p class="caption">Emily's Unused Imola from 2000's</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="boulder,nature,hiking">
             <img src="../assets/pics/goat.jpeg" alt="Beirstat">
             <p class="caption">First 14er</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="boulder,nature,friends">
             <img src="../assets/pics/fourthjuly.jpg" alt="Fourth Of July">
             <p class="caption">Fourth of July 2025 Gold Hill</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="boulder,home,family">
             <img src="../assets/pics/desk.jpg" alt="Desk">
             <p class="caption">Dad/Emily Home Office</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="family,boulder">
             <img src="../assets/pics/gramps_memorial.jpeg" alt="Gramps Memorial">
             <p class="caption">Gramps' Memorial at Corrida</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="food">
             <img src="../assets/pics/earlystart.jpeg" alt="early start with good breakfast">
             <p class="caption">Banger BFast</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="tech,nyc,friends,work">
             <img src="../assets/pics/huggingface.jpeg" alt="Training my model">
             <p class="caption">Training my Hugginface Hackathon model at the Standard hotel. Not pictured hungover Evan
                 / Leo</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="nyc,home,food">
             <img src="../assets/pics/coffee_setup.jpg" alt="Coffee setup">
             <p class="caption">Coffee Setup at 2542</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="boulder,nature">
             <img src="../assets/pics/flatirons_new.jpeg" alt="Flatirons">
             <p class="caption">Love coming back to Boulder for this view during college. Taken at Spruce Confections.
             </p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="work,travel">
             <img src="../assets/pics/meandering_santa_clara_prep.jpeg" alt="Meandering Santa Clara Prep">
             <p class="caption">Santa Clara Pitch Competition Prep</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="friends,nature,boulder">
             <img src="../assets/pics/evan_ice.jpeg" alt="Evan on icy lake">
             <p class="caption">Evan on a frozen-over lake</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="friends,nature,boulder">
             <img src="../assets/pics/evan_lookout.jpeg" alt="Evan at a mountain lookout">
             <p class="caption">Evan, Gold Hill, 2024. This fog came at us like a horror novel.</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="boulder,nature,friends">
             <img src="../assets/pics/gold_hill.jpeg" alt="Gold Hill scenic view">
             <p class="caption">Gold Hill, 2023. Luc, Graham.</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="friends,boulder,nature">
             <img src="../assets/pics/ryan.jpeg" alt="Ryan portrait">
             <p class="caption">Ryan, Gold Hill 2023.</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="cars,family">
             <img src="../assets/pics/gti.jpeg" alt="GTI car">
             <p class="caption">Packing up the GTI in the Tebo garage.</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="friends,food">
             <img src="../assets/pics/annie.jpeg" alt="Annie portrait">
             <p class="caption">Annie and Eggroll love</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="friends,nyc">
             <img src="../assets/pics/annie_tattoo.jpeg" alt="Annie's tattoo">
             <p class="caption">Annie's tattoo at Bang Bang's studio</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="family,portrait">
             <img src="../assets/pics/sweet_mom.jpeg" alt="Mom's portrait">
             <p class="caption">The best mom</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="travel,nature">
             <img src="../assets/pics/santa_cruz.jpeg" alt="Santa Cruz beach">
             <p class="caption">Santa Cruz lighthouse™ - Lloyd Tabb </p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="travel,nature">
             <img src="../assets/pics/santa_cruz_light.jpeg" alt="Santa Cruz lighthouse">
             <p class="caption">Lighting</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="family,portrait">
             <img src="../assets/pics/dad.jpeg" alt="Dad's portrait">
             <p class="caption">Dad, walking.</p>
         </div>
-        <div class="pic-item">
+        <div class="pic-item" data-tags="art,home,boulder">
             <img src="../assets/pics/rep.jpeg" alt="Rep's portrait">
             <p class="caption">I love this painting. Peers at you as you approach the home through the glass.</p>
         </div>
     </div>
-</body>
 
+    <script>
+        // Collect all unique tags from images
+        function collectTags() {
+            const tags = new Set();
+            const items = document.querySelectorAll('.pic-item[data-tags]');
+
+            items.forEach(item => {
+                const itemTags = item.getAttribute('data-tags');
+                if (itemTags) {
+                    itemTags.split(',').forEach(tag => {
+                        tags.add(tag.trim());
+                    });
+                }
+            });
+
+            return Array.from(tags).sort();
+        }
+
+        // Create tag buttons
+        function createTagButtons() {
+            const container = document.getElementById('tagButtons');
+            const tags = collectTags();
+
+            tags.forEach(tag => {
+                const button = document.createElement('button');
+                button.className = 'tag-btn';
+                button.textContent = tag;
+                button.dataset.tag = tag;
+                button.addEventListener('click', () => toggleTag(tag));
+                container.appendChild(button);
+            });
+        }
+
+        // Currently selected tags
+        let selectedTags = new Set();
+
+        // Toggle tag selection
+        function toggleTag(tag) {
+            const button = document.querySelector(`.tag-btn[data-tag="${tag}"]`);
+
+            if (selectedTags.has(tag)) {
+                selectedTags.delete(tag);
+                button.classList.remove('active');
+            } else {
+                selectedTags.add(tag);
+                button.classList.add('active');
+            }
+
+            // Show/hide clear button
+            const clearBtn = document.getElementById('clearTags');
+            clearBtn.style.display = selectedTags.size > 0 ? 'block' : 'none';
+
+            filterImages();
+        }
+
+        // Filter images based on selected tags
+        function filterImages() {
+            const items = document.querySelectorAll('.pic-item');
+
+            if (selectedTags.size === 0) {
+                // Show all if no tags selected
+                items.forEach(item => {
+                    item.classList.remove('hidden');
+                });
+                return;
+            }
+
+            items.forEach(item => {
+                const itemTags = item.getAttribute('data-tags');
+                if (!itemTags) {
+                    // Hide items without tags when filtering
+                    item.classList.add('hidden');
+                    return;
+                }
+
+                const tags = itemTags.split(',').map(t => t.trim());
+                const hasSelectedTag = Array.from(selectedTags).some(selectedTag =>
+                    tags.includes(selectedTag)
+                );
+
+                if (hasSelectedTag) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+
+        // Clear all selected tags
+        function clearAllTags() {
+            selectedTags.clear();
+            document.querySelectorAll('.tag-btn.active').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById('clearTags').style.display = 'none';
+            filterImages();
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createTagButtons();
+            document.getElementById('clearTags').addEventListener('click', clearAllTags);
+        });
+    </script>
+</body>
 </html>
