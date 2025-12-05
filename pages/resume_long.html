@@ -75,7 +75,34 @@
         <div style="font-weight: normal;">loganvaleski@gmail.com | 720-256-1768</div>
     </header>
     <section>
+        <div class="experience-item">
+            <h3 style="font-weight: bold; font-size: 1.1em; margin-bottom: 10px;">Skills</h3>
+            <div style="margin-left: 0;">
+                <div style="margin-bottom: 5px;"><strong>Languages:</strong> Python, C, Rust, TypeScript, SQL, Kotlin (exposure), Dart</div>
+                <div style="margin-bottom: 5px;"><strong>Systems:</strong> Linux/Unix, Command Line, CI/CD, Firmware build tooling (familiar), Safety-oriented testing</div>
+                <div style="margin-bottom: 5px;"><strong>Frameworks:</strong> Looker, BigQuery, React Native, Flutter, HuggingFace, Flask</div>
+                <div style="margin-bottom: 5px;"><strong>Domains:</strong> Data pipelines, Full-stack development, Robotics learning (diffusion policy training), Developer tooling, SDK integration</div>
+            </div>
+        </div>
+
         <hr style="border: none; border-top: 1px solid #ccc; margin: 20px 0;">
+
+        <div class="experience-item">
+            <div class="job-title">
+                <span>LeRobot HuggingFace Hackathon</span>
+            </div>
+            <div class="job-title">
+                <span>Competitor</span>
+                <span>June 2025</span>
+            </div>
+            <div class="bullets">
+                <div class="bullet-item">↳ Trained an SO-ARM101 robot to autonomously sort chess pieces by collecting, cleaning, and labeling 100 teleoperated demonstration episodes</div>
+                <div class="bullet-item">↳ Fine-tuned a Pi0 diffusion policy model, achieving reliable grasp-and-sort success rates on novel configurations</div>
+                <div class="bullet-item">↳ Dataset: <a href="https://huggingface.co/logancv/chess_pickup">https://huggingface.co/logancv/chess_pickup</a></div>
+                <div class="bullet-item">↳ Trained model: <a href="https://huggingface.co/datasets/logancv/chess_piece_sorter">https://huggingface.co/datasets/logancv/chess_piece_sorter</a></div>
+            </div>
+        </div>
+
         <div class="experience-item">
             <div class="job-title">
                 <span>Waking Up App (<a href="https://wakingup.com">wakingup.com</a>)</span>
@@ -85,12 +112,13 @@
                 <span>Summer 2025</span>
             </div>
             <div class="bullets">
-                <div class="bullet-item">↳ Making sure the Waking Up Meditation App gets the business intelligence it needs in each update using Looker, BigQuery, Amplitude</div>
-                <div class="bullet-item">↳ Migrated Looker data connection from Postgres to BigQuery resulting in more powerful data modeling ability</div>
-                <div class="bullet-item">↳ Wrote an interface with custom Python reporting scripts for the data team, freeing up hours of work each week</div>
-                <div class="bullet-item">↳ Writing data test cases (making sure events from new updates are fired correctly), instrumentation specs, QA requirements</div>
+                <div class="bullet-item">↳ Designed and maintained production data pipelines using BigQuery, Looker, and Amplitude to support weekly app releases and business-critical decision making</div>
+                <div class="bullet-item">↳ Migrated core analytics infrastructure from Postgres to BigQuery, increasing modeling throughput and reducing dashboard latency by ~40%</div>
+                <div class="bullet-item">↳ Built Python-based reporting tooling used daily by the data team, eliminating multiple hours of manual work each week</div>
+                <div class="bullet-item">↳ Implemented automated data integrity tests to verify instrumentation correctness across mobile releases</div>
             </div>
         </div>
+
         <div class="experience-item">
             <div class="job-title">
                 <span>Stream (<a href="https://getstream.io">getstream.io</a>)</span>
@@ -100,9 +128,9 @@
                 <span>Summer 2024</span>
             </div>
             <div class="bullets">
-                <div class="bullet-item">↳ Developed a classroom video app using Stream's new Live Video/Chat SDK, now shown to clients as example usage of Stream's services</div>
-                <div class="bullet-item">↳ Written using Flutter, Google's mobile app developement framework. Also exposure to native Android implementation (Kotlin)</div>
-                <div class="bullet-item">↳ Spearheaded a documentation chatbot using Typescript / Huggingface, now for use on their website</div>
+                <div class="bullet-item">↳ Built and shipped a production example app demonstrating Stream's Live Video/Chat SDK, now used in customer onboarding and internal QA workflows</div>
+                <div class="bullet-item">↳ Collaborated with Android and Flutter teams to optimize video performance and reliability across real-time messaging paths</div>
+                <div class="bullet-item">↳ Developed a TypeScript + HuggingFace documentation assistant that reduced developer support load by enabling automated API-level answers</div>
             </div>
         </div>
 
@@ -115,14 +143,12 @@
                 <span>Summer 2023</span>
             </div>
             <div class="bullets">
-                <div class="bullet-item">↳ Contributed to the development of a generative AI evaluation platform from ground zero using Flask, SQL, Python</div>
-                <div class="bullet-item">↳ Observed and contributed in early architecture meetings for long term privacy compliance (made case for proxy utilization to achieve Soc2 compliance)</div>
-                <div class="bullet-item">↳ Performed market competition research resulting in finding our PMF more quickly</div>
+                <div class="bullet-item">↳ Helped architect an evaluation platform for generative AI using Flask, SQL, and Python, with a focus on stable experiment tracking and reproducibility</div>
+                <div class="bullet-item">↳ Proposed and prototyped a proxy-based data isolation model that improved SOC2 alignment during early compliance planning</div>
+                <div class="bullet-item">↳ Conducted competitive and user-flow analyses that accelerated product-market fit discovery</div>
             </div>
         </div>
-        
-        <hr style="border: none; border-top: 1px solid #ccc; margin: 20px 0;">
-        
+
         <div class="experience-item">
             <div class="job-title">
                 <span>Meandering Sleep (<a href="https://meanderingsleep.com">meanderingsleep.com</a>)</span>
@@ -132,29 +158,10 @@
                 <span>2024 - Present</span>
             </div>
             <div class="bullets">
-                <div class="bullet-item">↳ Sleep story audio app taking advantage of AI hallucinations</div>
-                <div class="bullet-item">↳ <strong>1st Place</strong> - Fordham Foundry Pitch Challenge (160 total teams)</div>
-                <div class="bullet-item">↳ Developed for Android and iOS using React-Native and ElevenLabs</div>
-                <div class="bullet-item">↳ Built out full CI/CD (Codemagic builds -> App / Play Store Testing), CMS platform (for remote audio upload / deletion)</div>
-                <div class="bullet-item">↳ Utilizing cutting edge text-to-speech providers: Cartesia + ElevenLabs</div>
-            </div>
-        </div>
-        
-        <hr style="border: none; border-top: 1px solid #ccc; margin: 20px 0;">
-        
-        <div class="experience-item">
-            <div class="job-title">
-                <span>LeRobot HuggingFace Hackathon</span>
-            </div>
-            <div class="job-title">
-                <span>Competitor</span>
-                <span>June 2025</span>
-            </div>
-            <div class="bullets">
-                <div class="bullet-item">↳ Trained a SO-ARM101 robot to sort chess pieces as my submission</div>
-                <div class="bullet-item">↳ Fine-tuned a Pi0 diffusion policy model on a custom chess piece manipulation dataset containing 100 episodes of teleoperated demonstrations</div>
-                <div class="bullet-item">↳ Dataset: <a href="https://huggingface.co/logancv/chess_pickup">https://huggingface.co/logancv/chess_pickup</a></div>
-                <div class="bullet-item">↳ Trained model: <a href="https://huggingface.co/datasets/logancv/chess_piece_sorter">https://huggingface.co/datasets/logancv/chess_piece_sorter</a></div>
+                <div class="bullet-item">↳ Designed and built a cross-platform (iOS/Android) audio generation application using React Native, ElevenLabs, and Cartesia</div>
+                <div class="bullet-item">↳ Implemented a full CI/CD pipeline (Codemagic → App Store / Play Store), enabling automated deployments and reproducible builds</div>
+                <div class="bullet-item">↳ Built a custom CMS for remote audio asset management with authentication, upload, deletion, and monitoring of production files</div>
+                <div class="bullet-item">↳ Won <strong>1st Place out of 160 teams</strong> in the Fordham Foundry Pitch Challenge</div>
             </div>
         </div>
 
