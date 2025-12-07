@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Logan Valeski</title>
+    <title>logan.valeski.org</title>
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
     <style>
         body {
@@ -18,17 +18,16 @@
             overflow-x: hidden;
         }
         .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: 20px;
-            justify-content: center;
+            align-items: center;
             max-width: 1200px;
             margin-top: env(safe-area-inset-top);
             padding: 20px;
         }
         @media (max-width: 600px) {
             .container {
-                grid-template-columns: 1fr;
                 padding: 10px;
             }
         }
@@ -176,63 +175,15 @@
     
     <div class="container">
         <div class="city">
-            <img src="/assets/logan.jpg" alt="Meandering Sleep" style="width:30px; height:30px; border-radius: 25%;">
+            <img src="/assets/logan.png" alt="Meandering Sleep" style="width:30px; height:30px; border-radius: 25%;">
             <p class="title">Logan Valeski</p>
             <a href="/pages/resume_long.html">Resume</a>
         </div>
-        <div class="cityMeandering">
-            <a href="https://meanderingsleep.com" style="text-decoration: none; color: inherit; display: block; text-align: center;">
-                <img src="/assets/meandering_icon.png" alt="Meandering Sleep" style="width:30px; height:30px; border-radius: 25%;">
-                <p class="title">Meandering Sleep</p>
-            </a>
-            <a href="https://www.meanderingsleep.com/">Website</a>
-            <a href="/pages/refactor_roadmap.html">Refactor Roadmap</a>
-            <p>↳  1st Place - Fordham Foundry Pitch Challenge (160 total teams)</p>
-            <p>↳  2nd Place - Santa Clara University Pitch Competition</p>
-        </div>
         <div class="city">
-            <img src="/assets/sleep_icon.png" alt="History Sleep" style="width:30px; height:30px; border-radius: 25%;">
-            <p class="title">History Sleep</p>
-            <a href="https://www.historysleep.com">Website</a>
-        </div>
-        <div class="city">
-            <img src="/assets/posts_icon.png" alt="Posts" style="width:30px; height:30px; border-radius: 25%;">
-            <p class="title">Posts</p>
-            <a href="/pages/pics.html">Pictures</a>
-            <a href="/pages/music.html">Music</a>
-            <hr style="margin: 15px 0; border: none; border-top: 1px solid #d0d0d0; width: 100%;">
-            <a href="/pages/bike_post/biking_to_class.html">Biking to class from The Bronx to the UWS</a>
-            <a href="/pages/ellie_post/to_code.html">Commit 79780b0</a>
-            <!-- <hr style="margin: 15px 0; border: none; border-top: 1px solid #d0d0d0; width: 100%;">
-            <form id="subscribe-form" 
-                  action="https://formspree.io/f/xovllbba" 
-                  method="POST"
-                  style="margin-top: 10px; width: 100%; display: flex; gap: 4px; box-sizing: border-box;">
-                <input type="email" 
-                       name="email"
-                       placeholder="Subscribe to posts" 
-                       required
-                       style="flex: 1; 
-                              min-width: 0;
-                              padding: 8px 12px; 
-                              border: 1px solid #d0d0d0; 
-                              border-radius: 4px; 
-                              font-size: 12px; 
-                              font-family: inherit;
-                              box-sizing: border-box;
-                              background-color: white;">
-                <button type="submit"
-                        style="padding: 8px 12px;
-                               border: 1px solid #d0d0d0;
-                               border-radius: 4px;
-                               font-size: 14px;
-                               font-family: inherit;
-                               background-color: white;
-                               cursor: pointer;
-                               flex-shrink: 0;">
-                    &#8594;
-                </button>
-            </form> -->
+            <img src="/assets/river.png" alt="River" style="width:30px; height:30px; border-radius: 25%;">
+            <p class="title">River</p>
+            <p>A simpler place to post photos and writing</p>
+            <a href="https://river.page">river.page</a>
         </div>
     </div>
 </body>
