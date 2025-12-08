@@ -66,14 +66,41 @@
         a:hover {
             text-decoration: underline;
         }
+
+        @media (max-width: 600px) {
+            .header-container {
+                position: relative;
+            }
+
+            .download-link {
+                position: absolute;
+                top: -25px;
+                left: 0;
+            }
+
+            .header-title {
+                margin-top: 40px !important;
+                width: 100% !important;
+                text-align: center !important;
+            }
+
+            .header-flex {
+                justify-content: center !important;
+            }
+
+            .spacer {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body>
-    <div style="position: absolute; top: 20px; left: 20px;">
-        <a href="/assets/resume_long.pdf" download style="color: #0066cc; text-decoration: none; font-size: 14px;">↓ Download PDF</a>
-    </div>
-    <header style="text-align: center; margin-bottom: 30px;">
-        <h1 style="margin: 0 0 10px 0; font-size: 24px; font-weight: normal;">Logan Valeski</h1>
+    <header style="text-align: center; margin-bottom: 30px;" class="header-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;" class="header-flex">
+            <a href="/assets/resume_long.pdf" download style="color: #0066cc; text-decoration: none; font-size: 14px;" class="download-link">↓ Download PDF</a>
+            <h1 style="margin: 0; font-size: 24px; font-weight: normal; flex-grow: 1; text-align: center;" class="header-title">Logan Valeski</h1>
+            <div style="width: 100px;" class="spacer"></div>
+        </div>
         <hr style="border: none; border-top: 1px solid #ccc; margin: 20px 0;">
         <div style="font-weight: normal;">Blog: <a href="https://logan.valeski.org">logan.valeski.org</a></div>
         <div style="font-weight: normal;">loganvaleski@gmail.com | 720-256-1768</div>
@@ -83,7 +110,7 @@
             <h3 style="font-weight: bold; font-size: 1.1em; margin-bottom: 10px;">Skills</h3>
             <div style="margin-left: 0;">
                 <div style="margin-bottom: 5px;"><strong>Languages:</strong> Python, C++, TypeScript, SQL, Kotlin (exposure), Dart</div>
-                <div style="margin-bottom: 5px;"><strong>Systems:</strong> Linux/Unix, Command Line, CI/CD, Firmware build tooling (familiar)</div>
+                <div style="margin-bottom: 5px;"><strong>Systems:</strong> Linux/Unix, Command Line, CI/CD</div>
                 <div style="margin-bottom: 5px;"><strong>Frameworks:</strong> Looker, BigQuery, React Native, Flutter, HuggingFace, Flask</div>
                 <div style="margin-bottom: 5px;"><strong>Domains:</strong> Data pipelines, Full-stack development, Robotics learning (diffusion policy training), Developer tooling, SDK integration</div>
             </div>
