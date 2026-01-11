@@ -104,6 +104,22 @@
         *, *::before, *::after {
             box-sizing: border-box;
         }
+        #timezone {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        #timezone a {
+            color: #999;
+            text-decoration: none;
+        }
+        #timezone a:hover {
+            text-decoration: underline;
+        }
+        #timezone-line2 {
+            display: block;
+        }
     </style>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -173,8 +189,15 @@
             });
         });
     </script>
-    
+
     <div class="container">
+        <div id="timezone">
+            <a href="https://24timezones.com/world_directory/current_salt_lake_city_time.php">Time in Boulder</a>
+            <span id="timezone-line2">
+                <span id="time">12:27 PM</span>
+                <a href="https://24timezones.com/time-zone/mt">MDT</a>
+            </span>
+        </div>
         <div class="city">
             <img src="/assets/logan.jpg" alt="Meandering Sleep" style="width:30px; height:30px; border-radius: 25%;">
             <p class="title">Logan Valeski</p>
@@ -192,7 +215,7 @@
                 <img src="/assets/meandering_icon.png" alt="Meandering Sleep" style="width:30px; height:30px; border-radius: 25%;">
                 <p class="title">Meandering Sleep</p>
             </a>
-            <a href="https://apps.apple.com/us/app/meandering-sleep/id6502964632">App Store</a>
+            <a href="https://apps.apple.com/us/app/meandering-sleep/id6502964632">App Store</a>c
             <p>↳  1st Place (160 teams) - Fordham Pitch Challenge</p>
         </div>
     </div>
