@@ -68,6 +68,25 @@
             text-decoration: underline;
         }
 
+        @media print {
+            .download-link {
+                display: none !important;
+            }
+            .spacer {
+                display: none !important;
+            }
+            .header-title {
+                text-align: center !important;
+                width: 100% !important;
+            }
+            .header-flex {
+                justify-content: center !important;
+            }
+            .print-page-break {
+                break-before: page;
+            }
+        }
+
         @media (max-width: 600px) {
             .header-container {
                 position: relative;
@@ -152,7 +171,7 @@
             </div>
         </div>
 
-        <div class="experience-item">
+        <div class="experience-item print-page-break">
             <div class="job-title">
                 <span>Stream (<a href="https://getstream.io">getstream.io</a>)</span>
             </div>
