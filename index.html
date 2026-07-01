@@ -136,89 +136,12 @@
   gtag('config', 'G-WQS4TZXCNS');
 </script>
 <body>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('subscribe-form');
-            const emailInput = form.querySelector('input[type="email"]');
-            
-            form.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                console.log('Form submitted');
-                
-                const email = emailInput.value;
-                const originalPlaceholder = emailInput.placeholder;
-                
-                emailInput.disabled = true;
-                emailInput.style.opacity = '0.7';
-                
-                try {
-                    const response = await fetch('https://formspree.io/f/xovllbba', {
-                        method: 'POST',
-                        headers: {
-                            'Accept': 'application/json',
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({ 
-                            email: email,
-                            _subject: 'New blog subscriber'
-                        })
-                    });
-                    
-                    if (response.ok) {
-                        emailInput.value = '';
-                        emailInput.placeholder = 'Thanks! ✓';
-                        emailInput.disabled = false;
-                        emailInput.style.opacity = '1';
-                        setTimeout(() => {
-                            emailInput.placeholder = originalPlaceholder;
-                        }, 3000);
-                    } else {
-                        throw new Error('Subscription failed');
-                    }
-                } catch (error) {
-                    console.error('Submission error:', error);
-
-                    if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
-                        emailInput.value = '';
-                        emailInput.placeholder = 'Thanks! ✓';
-                    } else {
-                        emailInput.placeholder = 'Error, try again';
-                    }
-                    emailInput.disabled = false;
-                    emailInput.style.opacity = '1';
-                    setTimeout(() => {
-                        emailInput.placeholder = originalPlaceholder;
-                    }, 3000);
-                }
-            });
-        });
-    </script>
-
     <div class="container">
+        <img src="/assets/logan_banner.png" alt="Logan Valeski" style="display:block; width:100%; max-width:225px; height:auto;">
         <div class="city">
-            <img src="/assets/logan.jpg" alt="Meandering Sleep" style="width:30px; height:30px; border-radius: 25%;">
-            <p class="title">Logan Valeski</p>
-            <a href="/resume.html">Resume</a>
-        </div>
-        <div class="city">
-            <img src="/assets/posts_icon.png" alt="Posts" style="width:30px; height:30px; border-radius: 25%;">
-            <p class="title">Posts</p>
-            <a href="/pages/bike_post/biking_to_class.html">Biking from Bronx to UWS</a>
-        </div>
-        <div class="cityMeandering">
-            <a href="https://boresleep.com" style="text-decoration: none; color: inherit; display: block; text-align: center;">
-                <img src="/assets/bore_icon.png" alt="Bore" style="width:30px; height:30px; border-radius: 25%;">
-                <p class="title">Bore</p>
-            </a>
-            <a href="https://apps.apple.com/us/app/history-sleep/id6749167616">App Store</a>
-            <p>↳  1st Place (160 teams) - Fordham Pitch Challenge</p>
-        </div>
-        <div class="city">
-            <img src="/assets/river.png" alt="River" style="width:30px; height:30px; border-radius: 25%;">
-            <p class="title">River</p>
-            <p>My vision of a better posting platform</p>
-            <a href="https://river.page">river.page</a>
-            <a href="https://logan.river.page">logan.river.page</a>
+            <a href="/cv.html">CV</a>
+            <a href="https://logan.river.page">pics</a>
+            <a href="/pages/writing.html">writing</a>
         </div>
     </div>
 </body>
