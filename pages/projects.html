@@ -20,6 +20,11 @@
             display: block;
             margin: 6px 0;
         }
+        main { max-width: 480px; padding: 20px; }
+        .detail { font-size: 0.85em; color: #333; margin: 2px 0 14px; }
+        .detail p { margin: 4px 0; }
+        .detail a { display: inline; margin: 0; }
+        .detail video { display: block; margin: 12px 0; width: 100%; max-width: 320px; }
     </style>
 </head>
 <body>
@@ -27,6 +32,15 @@
         <a href="https://river.page">river.page</a>
         <a href="https://boresleep.com">boresleep.com</a>
         <a href="#">LeRobot Huggingface Hackathon</a>
+        <div class="detail">
+            <p>&#8627; Trained a SO-ARM101 robot to sort chess pieces as my submission</p>
+            <p>&#8627; Fine-tuned a Pi0 diffusion policy model on a custom chess piece manipulation dataset containing 100 episodes of teleoperated demonstrations</p>
+            <p>&#8627; Dataset: <a href="https://huggingface.co/logancv/chess_pickup">logancv/chess_pickup</a></p>
+            <p>&#8627; Trained model: <a href="https://huggingface.co/datasets/logancv/chess_piece_sorter">logancv/chess_piece_sorter</a></p>
+            <video autoplay loop muted playsinline>
+                <source src="lerobot.mp4" type="video/mp4">
+            </video>
+        </div>
     </main>
 </body>
 </html>

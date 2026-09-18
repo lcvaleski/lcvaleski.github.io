@@ -1,2 +1,2 @@
 *.mp4 filter=lfs diff=lfs merge=lfs -text
-pages/car_post/*.mp4 -filter -diff -merge -text
+pages/**/*.mp4 -filter -diff -merge -text
