@@ -26,6 +26,7 @@
         .detail a { display: inline; margin: 0; }
         .detail video { display: block; margin: 12px 0; width: 100%; max-width: 200px; }
         .detail img { display: block; margin: 12px 0; width: 100%; max-width: 240px; border: 1px solid #eee; }
+        .detail summary { cursor: pointer; color: #666; margin-top: 4px; }
     </style>
 </head>
 <body>
@@ -43,7 +44,10 @@
         <a href="https://boresleep.com">boresleep.com</a>
         <div class="detail">
             <p>I pitched this app during undergrad to Fordham Foundry. Ended up with <a href="https://thefordhamram.com/news/the-fordham-foundry-hosts-ninth-annual-pitch-challenge/">1st place</a> out of 250 teams.</p>
-            <img src="foundry.jpg" alt="Winning the Fordham Foundry Pitch Challenge">
+            <details>
+                <summary>see media</summary>
+                <img src="foundry.jpg" alt="Winning the Fordham Foundry Pitch Challenge">
+            </details>
         </div>
         <hr>
         <a href="#">LeRobot Huggingface Hackathon</a>
@@ -51,9 +55,12 @@
             <p>Trained a SO-ARM101 robot to sort chess pieces as my submission</p>
             <p>Dataset: <a href="https://huggingface.co/logancv/chess_pickup">logancv/chess_pickup</a></p>
             <p>Trained model: <a href="https://huggingface.co/datasets/logancv/chess_piece_sorter">logancv/chess_piece_sorter</a></p>
-            <video autoplay loop muted playsinline>
-                <source src="lerobot.mp4" type="video/mp4">
-            </video>
+            <details>
+                <summary>see media</summary>
+                <video autoplay loop muted playsinline>
+                    <source src="lerobot.mp4" type="video/mp4">
+                </video>
+            </details>
         </div>
     </main>
 </body>
