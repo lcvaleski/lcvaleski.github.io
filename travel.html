@@ -279,7 +279,11 @@
     <script>
         // Add country names here to fill them in, e.g. ["United States of America", "Japan"].
         // Hover a country on the page to see the exact name to use.
-        const visited = [];
+        const visited = [
+            "United States of America", "Mexico", "United Kingdom", "France", "Spain",
+            "Portugal", "Germany", "Switzerland", "Austria", "Italy", "India",
+            "Sri Lanka", "Thailand", "Cambodia", "Japan", "Iceland", "Canada", "Netherlands"
+        ];
         document.querySelectorAll('#world path').forEach(p => {
             if (visited.includes(p.dataset.name)) p.classList.add('visited');
         });
